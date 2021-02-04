@@ -1,10 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-export interface ICardOption {
-  label: string,
-  action: () => void
-}
-
+import ICardOption from '../../models/CardOption';
 @Component({
   selector: 'dashboard-card',
   templateUrl: './dashboard-card.component.html',
@@ -12,8 +7,8 @@ export interface ICardOption {
 })
 export class DashboardCardComponent implements OnInit {
 
-  @Input('title') title: string;
-  @Input('options') options?: Array<ICardOption>;
+  @Input() title: string;
+  @Input() options?: Array<ICardOption>;
 
   constructor() { }
 

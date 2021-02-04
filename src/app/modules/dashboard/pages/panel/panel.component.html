@@ -14,6 +14,10 @@
   </button>
 </section>
 
-<app-dashboard-wrapper [card-options]="cardOptions">
-
+<app-dashboard-wrapper
+  [cardOptions]="cardOptions"
+  [gridOptions]="gridOptions"
+  [dashboardItems]="this.dashboardItems"
+  (itemChange)="this.itemChange($event['item'], $event['itemComponent'])"
+  (itemResize)="this.itemResize($event['item'], $event['itemComponent'])">
 </app-dashboard-wrapper>

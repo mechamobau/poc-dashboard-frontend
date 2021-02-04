@@ -1,21 +1,8 @@
 import { Injectable } from '@angular/core';
-import { GridsterItem } from 'angular-gridster2';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-
-interface IDashboardCard {
-  _id: number;
-  coord_x: number;
-  coord_y: number;
-  height: number;
-  title: string;
-  width: number;
-}
-
-interface IDashboardPanel {
-  _id: number;
-  name: string;
-}
+import IDashboardCard from '../../models/DashboardCard';
+import IDashboardPanel from '../../models/DashboardPanel';
 
 interface APIResponse<T> {
   data?: T;
@@ -38,6 +25,9 @@ export class DashboardService {
     return this.http.get<APIResponse<IDashboardPanel[]>>(`${environment.serverUrl}/panel/`).toPromise();
   }
 
+  public fetchUpdateDashboardCard(panelId: number, cardId: number, newPosition: Exclude<IDashboardCard, '_id'>) {
+    return this.http.put<APIResponse<IDashboardCard>>(`${environment.serverUrl}/panel/${panelId}/cards/${cardId}`, newPosition).toPromise();
+  }
 
 
 }

@@ -1,5 +1,5 @@
-<gridster [options]="options">
-  <gridster-item [item]="item" *ngFor="let item of dashboardWrapper">
+<gridster [options]="_gridOptionsComponent">
+  <gridster-item [item]="item" *ngFor="let item of dashboardItems">
     <dashboard-card [title]="item.title" [options]="cardOptions"></dashboard-card>
   </gridster-item>
 </gridster>
