@@ -1,0 +1,18 @@
+<div class="card">
+  <header class="card-header">
+    <p>{{ title }}</p>
+
+    <button mat-button [matMenuTriggerFor]="menuOptions">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+  </header>
+
+  <div class="card-content">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae ullam alias saepe eius, nobis beatae in repudiandae laudantium cum, vitae suscipit quidem corrupti! Dolorem sunt nam, labore optio doloribus aperiam alias unde voluptatibus molestias ea cum laudantium corrupti eaque, quasi consequatur, a fugit. Error fugit consequuntur inventore praesentium, voluptatum a facere labore provident laboriosam cum nihil quos reprehenderit iste porro ea quisquam ipsa nulla esse omnis numquam iure! Illum vero, voluptate dolores, quia magni, quod ex quas similique cum debitis distinctio doloremque nam libero odit ut atque provident odio obcaecati commodi deserunt sint dolor quidem? Voluptates sunt repellendus, numquam neque, magnam facere voluptas, illo adipisci incidunt earum obcaecati doloribus! Quaerat, dolore quis? Accusamus repellat nihil id tempora consectetur. Eaque dolore dolorem aut vel praesentium delectus asperiores. Nihil, omnis. Nisi odit magni ab non distinctio fugit corrupti necessitatibus architecto. Voluptatibus aspernatur dignissimos ratione? Aliquid voluptatem cum ea odio minus? Quisquam consequatur aperiam ut quo explicabo ipsa iusto sapiente dolorem temporibus, nesciunt atque quaerat incidunt tempora ab non hic corporis quibusdam deserunt. Laudantium sequi, vitae est alias, sint dolorum molestiae at nulla fugit eaque tempora ipsum officiis dolore corporis! Vel ab officiis eaque est, ullam dolores eligendi, aspernatur atque vero eum debitis.</p>
+  </div>
+</div>
+
+<mat-menu #menuOptions="matMenu">
+  <button mat-menu-item *ngFor="let option of options" (click)="option.action()">{{option.label}}</button>
+</mat-menu>

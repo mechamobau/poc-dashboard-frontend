@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <span>Dashboard</span>
+
+  <span class="spacer"></span>
+
+  <button mat-icon-button (click)="this.logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<section class="controls">
+  <button mat-raised-button color="primary" (click)="this.logout()">
+    Adicionar card
+  </button>
+</section>
+
+<app-dashboard-wrapper [card-options]="cardOptions">
+
+</app-dashboard-wrapper>

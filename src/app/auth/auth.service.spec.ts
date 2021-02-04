@@ -7,14 +7,9 @@ import { JwtModule } from "@auth0/angular-jwt"
 import * as jwt from "jsonwebtoken"
 
 describe('AuthService test suite', function () {
-  afterEach(function() {
-    jasmine.clock().uninstall();
-  });
 
   beforeEach(function () {
     localStorage.removeItem("token");
-
-    jasmine.clock().install();
 
     TestBed.configureTestingModule({
       imports: [
