@@ -11,25 +11,40 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+
 
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { DashboardRedirectComponent } from './pages/dashboard-redirect/dashboard-redirect.component';
 import { DashboardService } from './services/dashboard/dashboard.service';
+import { NewPanelComponent } from './components/new-panel/new-panel.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { NewCardComponent } from './components/new-card/new-card.component';
 
 @NgModule({
-  declarations: [PanelComponent, DashboardWrapperComponent, DashboardCardComponent, DashboardRedirectComponent],
+  entryComponents: [NewPanelComponent, NewCardComponent],
+  declarations: [PanelComponent, DashboardWrapperComponent, DashboardCardComponent, DashboardRedirectComponent, NewPanelComponent, NewCardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
     MatMenuModule,
+    MatDialogModule,
     MatProgressSpinnerModule,
-    GridsterModule
+    GridsterModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [
-    DashboardService
+    DashboardService,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} },
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ]
 })
 export class DashboardModule { }

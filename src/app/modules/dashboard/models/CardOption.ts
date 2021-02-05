@@ -1,6 +1,6 @@
 interface ICardOption {
   label: string;
-  action: () => void;
+  action: (cardId: number) => void;
 }
 
 export default ICardOption;

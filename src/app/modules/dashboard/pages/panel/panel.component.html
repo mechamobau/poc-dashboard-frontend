@@ -9,7 +9,20 @@
 </mat-toolbar>
 
 <section class="controls">
-  <button mat-raised-button color="primary" (click)="this.logout()">
+  <mat-form-field appearance="fill">
+    <mat-label>Painel</mat-label>
+    <mat-select [value]="this.panelId" name="panel" (selectionChange)="this.onSelectChange($event)">
+      <mat-option *ngFor="let panel of this.panels" [value]="panel._id">
+        {{panel.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="this.openPanelDialog()">
+    Adicionar painel
+  </button>
+
+  <button mat-raised-button color="primary" (click)="this.openCardDialog()">
     Adicionar card
   </button>
 </section>
@@ -19,5 +32,6 @@
   [gridOptions]="gridOptions"
   [dashboardItems]="this.dashboardItems"
   (itemChange)="this.itemChange($event['item'], $event['itemComponent'])"
-  (itemResize)="this.itemResize($event['item'], $event['itemComponent'])">
+  (itemResize)="this.itemResize($event['item'], $event['itemComponent'])"
+  (itemDelete)="this.itemDelete($event['cardId'])">
 </app-dashboard-wrapper>

@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Novo Card</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field appearance="fill">
+    <mat-label style="width: 100%;">Nome do card</mat-label>
+    <input matInput [(ngModel)]="data.title" required>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close (click)="this.onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.title" cdkFocusInitial [disabled]="data.title === '' || data.title.length <= 3">Criar card</button>
+</mat-dialog-actions>

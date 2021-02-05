@@ -1,3 +1,8 @@
-<section class="loading-container">
+ <section *ngIf="dashboardStatus === dashboardStatusEnum.LOADING" class="loading-container">
   <mat-spinner></mat-spinner>
+</section>
+
+<section *ngIf="dashboardStatus === dashboardStatusEnum.NO_PANELS" class="empty-container">
+  <p>Você não possui paineis cadastrados</p>
+  <button mat-raised-button color="primary" (click)="this.openDialog()">Criar painel</button>
 </section>

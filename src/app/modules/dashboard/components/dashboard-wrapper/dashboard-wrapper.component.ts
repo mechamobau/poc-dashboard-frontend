@@ -30,6 +30,7 @@ export class DashboardWrapperComponent implements OnInit {
     item: GridsterItem;
     itemComponent: GridsterItemComponentInterface;
   }>();
+  @Output() itemDelete = new EventEmitter<{cardId: number}>();
 
   constructor() {}
 
@@ -54,5 +55,9 @@ export class DashboardWrapperComponent implements OnInit {
       },
       ...this.gridOptions,
     };
+  }
+
+  onDeleteCard(cardId: number) {
+    this.itemDelete.emit({cardId});
   }
 }

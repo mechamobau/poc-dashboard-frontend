@@ -14,5 +14,6 @@
 </div>
 
 <mat-menu #menuOptions="matMenu">
-  <button mat-menu-item *ngFor="let option of options" (click)="option.action()">{{option.label}}</button>
+  <button mat-menu-item (click)="this.deleteCard(cardId)">Excluir</button>
+  <button mat-menu-item *ngFor="let option of options" (click)="option.action(cardId)">{{option.label}}</button>
 </mat-menu>

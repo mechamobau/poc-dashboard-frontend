@@ -1,5 +1,5 @@
 <gridster [options]="_gridOptionsComponent">
   <gridster-item [item]="item" *ngFor="let item of dashboardItems">
-    <dashboard-card [title]="item.title" [options]="cardOptions"></dashboard-card>
+    <dashboard-card [title]="item.title" [options]="cardOptions" [cardId]="item._id" (onDelete)="this.onDeleteCard($event)"></dashboard-card>
   </gridster-item>
 </gridster>

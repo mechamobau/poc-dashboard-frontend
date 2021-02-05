@@ -1,6 +1,17 @@
-.loading-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+.empty-container {
+
+  flex-direction: column;
+
+  & > p {
+    font-size: 24pt;
+    font-weight: 800;
+  }
+
+  &, .loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
 }

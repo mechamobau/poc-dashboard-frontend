@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import ICardOption from '../../models/CardOption';
 @Component({
   selector: 'dashboard-card',
@@ -7,12 +7,19 @@ import ICardOption from '../../models/CardOption';
 })
 export class DashboardCardComponent implements OnInit {
 
+  @Input() cardId: number;
   @Input() title: string;
   @Input() options?: Array<ICardOption>;
+
+  @Output() onDelete = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  deleteCard(cardId: number) {
+    this.onDelete.emit(cardId);
   }
 
 }
